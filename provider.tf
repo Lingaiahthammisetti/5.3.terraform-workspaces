@@ -6,14 +6,13 @@ terraform {
     }
   }
   backend "s3" {
-    bucket ="lingadevops-remote-state"
-    key = "workspace"
-    region = "us-east-1"
-    dynamodb_table="lingadevops-locking"
+      bucket ="tf-workspaces-remote-state"
+      key="tf-workspaces-key"
+      region="us-east-1"
+      dynamodb_table="tf-workspaces-remote-state-locking"
   }
 }
 provider "aws" {
   # Configuration options
   region = "us-east-1"
 }
-
